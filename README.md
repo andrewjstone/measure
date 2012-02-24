@@ -26,3 +26,15 @@ Return the statistics for the given key or statistics for all keys if none is gi
 ## clear([key])
 
 Clear stats for the given key or all keys if none is given.
+
+# Install
+
+    npm install measure
+
+# Run Tests
+
+    mocha tests/measure.test.js --reporter spec
+
+# License
+
+MIT/X11
