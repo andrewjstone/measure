@@ -1,0 +1,16 @@
+{
+  "author": "Andrew J. Stone <andrew.j.stone.1@gmail.com>",
+  "name": "measure",
+  "description": "Measure the duration of JS code segments and keep stats",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/andrewjstone/measure.git"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.4.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
