@@ -1,10 +1,15 @@
 This simple module mesures the duration of javascript operations. 
+The module itself is an instance of [EventEmitter2](https://github.com/hij1nx/EventEmitter2).
 
 # Example
 
 ```javascript
 var measure = require('measure');
-var done = measure.measure('timeconsumingoperation');
+var done = measure.measure('timeconsuming.operation');
+
+measure.on('timeconsuming.*', function(duration) {
+  console.log(duration); // same value as returned from done()
+});
 
 setTimeout(function() {
   var duration = done();

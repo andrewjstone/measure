@@ -1,13 +1,24 @@
+// This module is an *instance* of EventEmitter2
+
+var EventEmitter = require('eventemitter2').EventEmitter2;
+
+var ee = module.exports = EventEmitter({
+  wildcard: true
+});
+ee.measure = measure;
+ee.stats = stats;
+ee.clear = clear;
+
 var statistics = {};
 
 function measure(key) {
   if (!key) throw('measure requires a key');
-
   var start = Date.now();
 
   return function() {
     var duration = Date.now() - start;
     update_stats(key, duration);
+    ee.emit(key, duration);
     return duration;
   };
 }
@@ -42,8 +53,3 @@ function clear(key) {
   statistics = {};
 }
 
-module.exports = {
-  measure: measure,
-  stats: stats,
-  clear: clear
-};
