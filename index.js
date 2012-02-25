@@ -2,7 +2,7 @@
 
 var EventEmitter = require('eventemitter2').EventEmitter2;
 
-var ee = module.exports = EventEmitter({
+var ee = module.exports = new EventEmitter({
   wildcard: true
 });
 ee.measure = measure;
